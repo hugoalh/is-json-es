@@ -25,6 +25,7 @@ Deno.test("False 3", { permissions: "none" }, () => {
 	}), false);
 });
 Deno.test("False 4", { permissions: "none" }, () => {
+	//deno-lint-ignore hugoalh/no-nan
 	deepStrictEqual(isJSON(NaN), false);
 });
 Deno.test("False 5", { permissions: "none" }, () => {
