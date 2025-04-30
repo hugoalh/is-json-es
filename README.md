@@ -6,7 +6,7 @@
 [![JSR: @hugoalh/is-json](https://img.shields.io/jsr/v/@hugoalh/is-json?label=@hugoalh/is-json&labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat "JSR: @hugoalh/is-json")](https://jsr.io/@hugoalh/is-json)
 [![NPM: @hugoalh/is-json](https://img.shields.io/npm/v/@hugoalh/is-json?label=@hugoalh/is-json&labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/is-json")](https://www.npmjs.com/package/@hugoalh/is-json)
 
-An ES (JavaScript & TypeScript) module to determine whether the item is a JSON.
+An ECMAScript (JavaScript & TypeScript) module to determine whether the item is a JSON.
 
 ## 🔰 Begin
 
