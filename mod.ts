@@ -53,15 +53,9 @@ export default isJSON;
  * @returns {item is JSONArray} Determine result.
  */
 export function isJSONArray(item: unknown): item is JSONArray {
-	if (!Array.isArray(item)) {
-		return false;
-	}
-	for (const element of item) {
-		if (!isJSON(element)) {
-			return false;
-		}
-	}
-	return true;
+	return (Array.isArray(item) && item.every((element: unknown): element is JSONValue => {
+		return isJSON(element);
+	}));
 }
 /**
  * Determine whether the item is a JSON object.
@@ -72,7 +66,8 @@ export function isJSONObject(item: unknown): item is JSONObject {
 	if (
 		typeof item !== "object" ||
 		item === null ||
-		Array.isArray(item)
+		Array.isArray(item) ||
+		!isObjectPlain(item)
 	) {
 		return false;
 	}
@@ -81,18 +76,9 @@ export function isJSONObject(item: unknown): item is JSONObject {
 	} catch {
 		return false;
 	}
-	if (!isObjectPlain(item)) {
-		return false;
-	}
-	for (const key in item) {
-		if (Object.hasOwn(item, key)) {
-			//@ts-ignore Impact not exists.
-			if (!isJSON(item[key])) {
-				return false;
-			}
-		}
-	}
-	return true;
+	return Object.values(item).every((value: unknown): value is JSONValue => {
+		return isJSON(value);
+	});
 }
 /**
  * Determine whether the item is a JSON primitive.
