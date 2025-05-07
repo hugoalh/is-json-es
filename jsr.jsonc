@@ -1,12 +1,12 @@
 {
 	"$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
 	"name": "@hugoalh/is-json",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"exports": {
 		".": "./mod.ts"
 	},
 	"imports": {
-		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.5/mod.ts": "jsr:@hugoalh/is-object-plain@^1.0.5"
+		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.6/mod.ts": "jsr:@hugoalh/is-object-plain@^1.0.6"
 	},
 	"publish": {
 		"exclude": [

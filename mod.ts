@@ -1,5 +1,4 @@
-//deno-lint-ignore-file hugoalh/prefer-interface
-import { isObjectPlain } from "https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.5/mod.ts";
+import { isObjectPlain } from "https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.6/mod.ts";
 /**
  * Type of the JSON array.
  */
@@ -7,7 +6,9 @@ export type JSONArray = JSONValue[];
 /**
  * Type of the JSON object.
  */
-export type JSONObject = { [key: string]: JSONValue; };
+export interface JSONObject {
+	[key: string]: JSONValue;
+}
 /**
  * Type of the JSON primitive.
  */
@@ -23,11 +24,13 @@ export type JSONArrayExtend = JSONValueExtend[] | readonly JSONValueExtend[];
 /**
  * Type of the JSON object (extend).
  */
-export type JSONObjectExtend = { [key: string]: JSONValueExtend; };
+export interface JSONObjectExtend {
+	[key: string]: JSONValueExtend;
+}
 /**
  * Type of the JSON value (extend).
  */
-export type JSONValueExtend = JSONArrayExtend | JSONObjectExtend | JSONPrimitive | undefined;
+export type JSONValueExtend = JSONArrayExtend | JSONObjectExtend | JSONPrimitive | Readonly<JSONObjectExtend> | undefined;
 /**
  * Determine whether the item is a JSON.
  * @param {unknown} item Item that need to determine.

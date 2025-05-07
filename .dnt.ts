@@ -12,9 +12,9 @@ await invokeDenoNodeJSTransformer({
 	fixInjectedImports: true,
 	generateDeclarationMap: true,
 	mappings: {
-		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.5/mod.ts": {
+		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.6/mod.ts": {
 			name: "@hugoalh/is-object-plain",
-			version: "^1.0.5"
+			version: "^1.0.6"
 		}
 	},
 	metadata: {
@@ -38,7 +38,6 @@ await invokeDenoNodeJSTransformer({
 		scripts: {
 		},
 		engines: {
-			node: ">=16.13.0"
 		},
 		private: false,
 		publishConfig: {
