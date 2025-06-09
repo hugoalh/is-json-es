@@ -12,9 +12,9 @@ await invokeDenoNodeJSTransformer({
 	fixInjectedImports: true,
 	generateDeclarationMap: true,
 	mappings: {
-		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.6/mod.ts": {
+		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.7/mod.ts": {
 			name: "@hugoalh/is-object-plain",
-			version: "^1.0.6"
+			version: "^1.0.7"
 		}
 	},
 	metadata: {
