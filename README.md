@@ -65,27 +65,6 @@ An ECMAScript (JavaScript & TypeScript) module to determine whether the item is 
 - ```ts
   function isJSONPrimitive(item: unknown): item is JSONPrimitive;
   ```
-- ```ts
-  type JSONArray = JSONValue[];
-  ```
-- ```ts
-  type JSONArrayExtend = JSONValueExtend[] | readonly JSONValueExtend[];
-  ```
-- ```ts
-  type JSONObject = { [key: string]: JSONValue; };
-  ```
-- ```ts
-  type JSONObjectExtend = { [key: string]: JSONValueExtend; };
-  ```
-- ```ts
-  type JSONPrimitive = boolean | number | string | null;
-  ```
-- ```ts
-  type JSONValue = JSONArray | JSONObject | JSONPrimitive;
-  ```
-- ```ts
-  type JSONValueExtend = JSONArrayExtend | JSONObjectExtend | JSONPrimitive | undefined;
-  ```
 
 > [!NOTE]
 > - For the full or prettier documentation, can visit via:
