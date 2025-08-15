@@ -98,3 +98,11 @@ export function isJSONPrimitive(item: unknown): item is JSONPrimitive {
 			return false;
 	}
 }
+/**
+ * Parse the JSON string.
+ * @param {string} item A JSON string that need to parse.
+ * @returns {JSONValue} A JSON value.
+ */
+export function parseJSON(item: string): JSONValue {
+	return JSON.parse(item);
+}
