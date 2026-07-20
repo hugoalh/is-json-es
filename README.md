@@ -3,7 +3,8 @@
 [**⚖️** MIT](./LICENSE.md)
 
 🔗
-[GitHub](https://github.com/hugoalh/is-json-es)
+[DistBoard @hugoalh](https://hugoalh.github.io/distboard/is_json_ecmascript)
+● [GitHub](https://github.com/hugoalh/is-json-es)
 ● [JSR](https://jsr.io/@hugoalh/is-json)
 ● [NPM](https://www.npmjs.com/package/@hugoalh/is-json)
 

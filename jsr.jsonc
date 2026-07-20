@@ -1,13 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
 	"name": "@hugoalh/is-json",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"license": "MIT",
 	"exports": {
 		".": "./mod.ts"
 	},
 	"imports": {
-		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.7/mod.ts": "jsr:@hugoalh/is-object-plain@^1.0.7"
+		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.8/mod.ts": "jsr:@hugoalh/is-object-plain@^1.0.8"
 	},
 	"publish": {
 		"exclude": [
