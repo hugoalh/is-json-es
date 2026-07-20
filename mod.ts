@@ -1,36 +1,17 @@
-import { isObjectPlain } from "https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.7/mod.ts";
-/**
- * Type of the JSON array.
- */
+import { isObjectPlain } from "https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.8/mod.ts";
 export type JSONArray = JSONValue[];
-/**
- * Type of the JSON object.
- */
 export interface JSONObject {
-	[key: string]: JSONValue;
+	[key: string]: JSONValue | undefined;
 }
-/**
- * Type of the JSON primitive.
- */
-export type JSONPrimitive = boolean | number | string | null;
-/**
- * Type of the JSON value.
- */
-export type JSONValue = JSONArray | JSONObject | JSONPrimitive;
-/**
- * Type of the JSON array (extend).
- */
-export type JSONArrayExtend = JSONValueExtend[] | readonly JSONValueExtend[];
-/**
- * Type of the JSON object (extend).
- */
-export interface JSONObjectExtend {
-	[key: string]: JSONValueExtend;
-}
-/**
- * Type of the JSON value (extend).
- */
-export type JSONValueExtend = JSONArrayExtend | JSONObjectExtend | JSONPrimitive | Readonly<JSONObjectExtend> | undefined;
+export type JSONPrimitive =
+	| boolean
+	| number
+	| string
+	| null;
+export type JSONValue =
+	| JSONArray
+	| JSONObject
+	| JSONPrimitive;
 /**
  * Determine whether the item is a JSON.
  * @param {unknown} item Item that need to determine.
@@ -63,12 +44,7 @@ export function isJSONArray(item: unknown): item is JSONArray {
  * @returns {item is JSONObject} Determine result.
  */
 export function isJSONObject(item: unknown): item is JSONObject {
-	if (
-		typeof item !== "object" ||
-		item === null ||
-		Array.isArray(item) ||
-		!isObjectPlain(item)
-	) {
+	if (!isObjectPlain(item)) {
 		return false;
 	}
 	try {
@@ -77,7 +53,10 @@ export function isJSONObject(item: unknown): item is JSONObject {
 		return false;
 	}
 	return Object.values(item).every((value: unknown): value is JSONValue => {
-		return isJSON(value);
+		return (
+			typeof value === "undefined" ||
+			isJSON(value)
+		);
 	});
 }
 /**
@@ -106,3 +85,17 @@ export function isJSONPrimitive(item: unknown): item is JSONPrimitive {
 export function parseJSON(item: string): JSONValue {
 	return JSON.parse(item);
 }
+/**
+ * @deprecated Use {@linkcode JSONArray} instead.
+ */
+export type JSONArrayExtend = JSONValueExtend[] | readonly JSONValueExtend[];
+/**
+ * @deprecated Use {@linkcode JSONObject} instead.
+ */
+export interface JSONObjectExtend {
+	[key: string]: JSONValueExtend;
+}
+/**
+ * @deprecated Use {@linkcode JSONValue} instead.
+ */
+export type JSONValueExtend = JSONArrayExtend | JSONObjectExtend | JSONPrimitive | Readonly<JSONObjectExtend> | undefined;
