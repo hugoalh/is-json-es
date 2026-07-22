@@ -44,20 +44,12 @@ export function isJSONArray(item: unknown): item is JSONArray {
  * @returns {item is JSONObject} Determine result.
  */
 export function isJSONObject(item: unknown): item is JSONObject {
-	if (!isObjectPlain(item)) {
-		return false;
-	}
-	try {
-		JSON.stringify(item);
-	} catch {
-		return false;
-	}
-	return Object.values(item).every((value: unknown): value is JSONValue => {
+	return (isObjectPlain(item) && Object.values(item).every((value: unknown): value is JSONValue => {
 		return (
 			typeof value === "undefined" ||
 			isJSON(value)
 		);
-	});
+	}));
 }
 /**
  * Determine whether the item is a JSON primitive.
