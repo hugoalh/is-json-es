@@ -12,7 +12,7 @@ await transform({
 	entrypointsScript: manifest.exports,
 	generateDeclarationMap: true,
 	mappings: {
-		"https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.8/mod.ts": {
+		"jsr:@hugoalh/is-object-plain@^1.0.8": {
 			name: "@hugoalh/is-object-plain",
 			version: "^1.0.8"
 		}

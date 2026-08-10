@@ -1,4 +1,4 @@
-import { isObjectPlain } from "https://raw.githubusercontent.com/hugoalh/is-object-plain-es/v1.0.8/mod.ts";
+import { isObjectPlain } from "jsr:@hugoalh/is-object-plain@^1.0.8";
 export type JSONArray = JSONValue[];
 export interface JSONObject {
 	[key: string]: JSONValue | undefined;
