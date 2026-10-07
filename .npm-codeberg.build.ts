@@ -10,7 +10,6 @@ await transform({
 	],
 	//@ts-ignore Lazy type.
 	entrypointsScript: manifest.exports,
-	generateDeclarationMap: true,
 	mappings: {
 		"jsr:@hugoalh/is-object-plain@^1.0.8": {
 			name: "@hugoalh/is-object-plain",
