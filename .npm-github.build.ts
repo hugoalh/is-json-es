@@ -11,9 +11,9 @@ await transform({
 	//@ts-ignore Lazy type.
 	entrypointsScript: manifest.exports,
 	mappings: {
-		"jsr:@hugoalh/is-object-plain@^1.0.8": {
+		"jsr:@hugoalh/is-object-plain@^1.0.9": {
 			name: "@hugoalh/is-object-plain",
-			version: "^1.0.8"
+			version: "^1.0.9"
 		}
 	},
 	metadata: {

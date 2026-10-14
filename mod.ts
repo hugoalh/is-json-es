@@ -1,4 +1,4 @@
-import { isObjectPlain } from "jsr:@hugoalh/is-object-plain@^1.0.8";
+import { isObjectPlain } from "jsr:@hugoalh/is-object-plain@^1.0.9";
 export type JSONArray = JSONValue[];
 export interface JSONObject {
 	[key: string]: JSONValue | undefined;
